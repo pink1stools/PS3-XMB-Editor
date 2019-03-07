@@ -1,0 +1,17 @@
+<!--XMB EDITOR STEP 1: Add Power Options query patch-->
+		
+		
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="power_options"
+				src="xmb://localhost/dev_flash/vsh/resource/explore/xmb/power_options.xml#power_options"
+				/>
+				
+
+	
+	<!--XMB EDITOR STEP 2: Copy 4 files to flash-->
+	
+			Copy the power_options.xml to /dev_blind/vsh/resource/explore/xmb/ 
+			Copy the power.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the xai_plugin.sprx to /dev_blind/vsh/module/
+			Copy the xai_plugin.rco to /dev_blind/vsh/resource/

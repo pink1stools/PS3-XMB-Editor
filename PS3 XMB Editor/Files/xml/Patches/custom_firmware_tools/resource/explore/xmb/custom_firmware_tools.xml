@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<XMBML version="1.0">
+
+	<View id="custom_firmware_tools_main">
+		<Attributes>
+			<Table key="custom_firmware_tools">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/tools.png</String></Pair>
+				<Pair key="title"><String>Custom Firmware Tools +</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="custom_firmware_tools" attr="custom_firmware_tools" src="#custom_firmware_tools_items"/>
+		</Items>
+	</View>
+	
+	<View id="custom_firmware_tools_items">
+		<Attributes>
+			<Table key="soft_reboot_action">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/restart.png</String></Pair>
+				<Pair key="title"><String>Soft Reboot</String></Pair>
+				<Pair key="info"><String>Reload LV2</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>soft_reboot_action</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="hard_reboot_action">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/restart.png</String></Pair>
+				<Pair key="title"><String>Hard Reboot</String></Pair>
+				<Pair key="info"><String>Full cycle reboot.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>hard_reboot_action</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="toggle_dlna">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/dlna.png</String></Pair>
+				<Pair key="title"><String>Toggle DLNA</String></Pair>
+				<Pair key="info"><String>Turns on or off DLNA Media Server (Useful on DEX).</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>toggle_dlna</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="extra_tools">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/folder_list.png</String></Pair>
+				<Pair key="title"><String>Extra Tools</String></Pair>
+				<Pair key="info"><String>Toggle other CFW options</String></Pair>
+			</Table>
+			<Table key="dump_tools">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/key.png</String></Pair>
+				<Pair key="title"><String>Dump Tools</String></Pair>
+				<Pair key="info"><String>Read keys and IDs.</String></Pair>
+			</Table>
+			<Table key="recovery_menu">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/tools.png</String></Pair>
+				<Pair key="title"><String>Service Tools</String></Pair>
+				<Pair key="info"><String>Settings reserved only for advanced users (Use with caution!)</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="soft_reboot_action"		attr="soft_reboot_action"/>
+			<Item class="type:x-xmb/module-action" key="hard_reboot_action"		attr="hard_reboot_action"/>
+			<Item class="type:x-xmb/module-action" key="toggle_dlna"			attr="toggle_dlna"/>
+			<Query class="type:x-xmb/folder-pixmap" key="extra_tools"			attr="extra_tools"		src="#extra_tools"/>
+			<Query class="type:x-xmb/folder-pixmap" key="dump_tools"			attr="dump_tools"		src="#dump_tools"/>
+			<Query class="type:x-xmb/folder-pixmap" key="recovery_menu"			attr="recovery_menu"	src="#recovery_menu"/>
+		</Items>
+	</View>
+	
+	<View id="extra_tools">
+		<Attributes>
+			<Table key="toggle_dev_blind">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/flash.png</String></Pair>
+				<Pair key="title"><String>Toggle dev_flash write access</String></Pair>
+				<Pair key="info"><String>Enable/Disable dev_blind partition</String></Pair>
+			</Table>
+			<Table key="toggle_bootplugins">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/text.png</String></Pair>
+				<Pair key="title"><String>Toggle Plugins</String></Pair>
+				<Pair key="info"><String>Enable/Disable boot_plugins.txt</String></Pair>
+			</Table>
+			<Table key="toggle_webman">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/file.png</String></Pair>
+				<Pair key="title"><String>Toggle webMAN</String></Pair>
+				<Pair key="info"><String>Enable/Disable webMAN sprx (dev_hdd0/plugins/)</String></Pair>
+			</Table>
+			<Table key="xreg_switcher">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/faces.png</String></Pair>
+				<Pair key="title"><String>Backup and Swap xRegistry.sys</String></Pair>
+				<Pair key="info"><String>Easily switch settings by swapping between xReg files</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="toggle_dev_blind" attr="toggle_dev_blind" src="#toggle_dev_blind_items"/>
+			<Query class="type:x-xmb/folder-pixmap" key="toggle_bootplugins" attr="toggle_bootplugins" src="#toggle_bootplugins_items"/>
+			<Query class="type:x-xmb/folder-pixmap" key="toggle_webman"	attr="toggle_webman" src="#toggle_webman_items"/>
+			<Query class="type:x-xmb/folder-pixmap" key="xreg_switcher"	attr="xreg_switcher" src="#xreg_switcher_items"/>
+		</Items>
+	</View>
+	
+	<View id="toggle_dev_blind_items">
+		<Attributes>
+			<Table key="enable_dev_blind">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/flash.png</String></Pair>
+				<Pair key="title"><String>Enable dev_blind</String></Pair>
+				<Pair key="info"><String>Mounts dev_flash partition as writeable dev_blind</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>enable_devblind</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="disable_dev_blind">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/flash.png</String></Pair>
+				<Pair key="title"><String>Disable dev_blind</String></Pair>
+				<Pair key="info"><String>Unmounts dev_blind partition</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>disable_devblind</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="enable_dev_blind"		attr="enable_dev_blind"/>
+			<Item class="type:x-xmb/module-action" key="disable_dev_blind"			attr="disable_dev_blind"/>
+		</Items>
+	</View>
+	
+	<View id="toggle_bootplugins_items">
+		<Attributes>
+			<Table key="enable_bootplugins">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/text.png</String></Pair>
+				<Pair key="title"><String>Enable All Plugins</String></Pair>
+				<Pair key="info"><String>(Reboot Required)</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_hdd0/boot_plugins.txt.bak#/dev_hdd0/boot_plugins.txt#move</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="disable_bootplugins">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/file.png</String></Pair>
+				<Pair key="title"><String>Disable All Plugins</String></Pair>
+				<Pair key="info"><String>(Reboot Required)</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_hdd0/boot_plugins.txt#/dev_hdd0/boot_plugins.txt.bak#move</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="enable_bootplugins"	attr="enable_bootplugins"/>
+			<Item class="type:x-xmb/module-action" key="disable_bootplugins" attr="disable_bootplugins"/>
+		</Items>
+	</View>
+	
+		<View id="toggle_webman_items">
+		<Attributes>
+			<Table key="enable_webman">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/plugin.png</String></Pair>
+				<Pair key="title"><String>Enable webMAN Mod</String></Pair>
+				<Pair key="info"><String>(Reboot Required)</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_hdd0/plugins/webftp_server.sprx.bak#/dev_hdd0/plugins/webftp_server.sprx#move</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="disable_webman">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/plugin.png</String></Pair>
+				<Pair key="title"><String>Disable webMAN Mod</String></Pair>
+				<Pair key="info"><String>(Reboot Required)</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_hdd0/plugins/webftp_server.sprx#/dev_hdd0/plugins/webftp_server.sprx.bak#move</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="enable_webman"	attr="enable_webman"/>
+			<Item class="type:x-xmb/module-action" key="disable_webman"	attr="disable_webman"/>
+		</Items>
+	</View>
+	
+	<View id="xreg_switcher_items">
+		<Attributes>
+			<Table key="seg_xreg_backup">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Backup Current xRegistry.sys file</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+			<Table key="seg_xreg_1">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/step.png</String></Pair>
+				<Pair key="title"><String>Restore xRegistry Configuration 1</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+			<Table key="seg_xreg_2">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/step.png</String></Pair>
+				<Pair key="title"><String>Restore xRegistry Configuration 2</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+			<Table key="seg_xreg_3">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/step.png</String></Pair>
+				<Pair key="title"><String>Restore xRegistry Configuration 3</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_xreg_backup"
+				attr="seg_xreg_backup"
+				src="#seg_xreg_backup_items"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_xreg_1"
+				attr="seg_xreg_1"
+				src="#seg_xreg_1_item"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_xreg_2"
+				attr="seg_xreg_2"
+				src="#seg_xreg_2_item"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_xreg_3"
+				attr="seg_xreg_3"
+				src="#seg_xreg_3_item"
+				/>
+		</Items>
+		</View>
+		
+		<View id="seg_xreg_1_item">
+		<Attributes>
+			<Table key="seg_xreg_1_item">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Current xRegistry.sys will be overwritten, are you sure?</String></Pair>
+				<Pair key="info"><String>Press  to continue, Press  to go back.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_flash2/etc/xRegistry1.sys#/dev_flash2/etc/xRegistry.sys#/dev_flash2/etc/xRegistry1.sys#/dev_flash2/etc/backup/xRegistry.sys#hard_reboot</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/module-action"
+				key="seg_xreg_1_item"
+				attr="seg_xreg_1_item"
+				/>
+		</Items>
+		</View>
+		
+		<View id="seg_xreg_2_item">
+		<Attributes>
+			<Table key="seg_xreg_2_item">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Current xRegistry.sys will be overwritten, are you sure?</String></Pair>
+				<Pair key="info"><String>Press  to continue, Press  to go back.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_flash2/etc/xRegistry2.sys#/dev_flash2/etc/xRegistry.sys#/dev_flash2/etc/xRegistry2.sys#/dev_flash2/etc/backup/xRegistry.sys#hard_reboot</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/module-action"
+				key="seg_xreg_2_item"
+				attr="seg_xreg_2_item"
+				/>
+		</Items>
+		</View>
+		<View id="seg_xreg_3_item">
+		<Attributes>
+			<Table key="seg_xreg_3_item">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Current xRegistry.sys will be overwritten, are you sure?</String></Pair>
+				<Pair key="info"><String>Press  to continue, Press  to go back.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_flash2/etc/xRegistry3.sys#/dev_flash2/etc/xRegistry.sys#/dev_flash2/etc/xRegistry3.sys#/dev_flash2/etc/backup/xRegistry.sys#hard_reboot</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/module-action"
+				key="seg_xreg_3_item"
+				attr="seg_xreg_3_item"
+				/>
+		</Items>
+		</View>
+		
+		<View id="seg_xreg_backup_items">
+		<Attributes>
+			<Table key="seg_backup_xreg_1">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Backup Current xRegistry.sys to Configuration Slot 1</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+			<Table key="seg_backup_xreg_2">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Backup Current xRegistry.sys to Configuration Slot 2</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+			<Table key="seg_backup_xreg_3">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Backup Current xRegistry.sys to Configuration Slot 3</String></Pair>
+				<Pair key="info"><String></String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_backup_xreg_1"
+				attr="seg_backup_xreg_1"
+				src="#seg_backup_xreg_1_item"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_backup_xreg_2"
+				attr="seg_backup_xreg_2"
+				src="#seg_backup_xreg_2_item"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="seg_backup_xreg_3"
+				attr="seg_backup_xreg_3"
+				src="#seg_backup_xreg_3_item"
+				/>
+		</Items>
+		</View>
+		
+		<View id="seg_backup_xreg_1_item">
+		<Attributes>
+			<Table key="seg_backup_xreg_1_item">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Backup in slot 1 will be overwritten, are you sure?</String></Pair>
+				<Pair key="info"><String>Press  to continue, Press  to go back.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_flash2/etc/xRegistry.sys#/dev_flash2/etc/xRegistry1.sys</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/module-action"
+				key="seg_backup_xreg_1_item"
+				attr="seg_backup_xreg_1_item"
+				/>
+		</Items>
+		</View>
+		
+		<View id="seg_backup_xreg_2_item">
+		<Attributes>
+			<Table key="seg_backup_xreg_2_item">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Backup in slot 2 will be overwritten, are you sure?</String></Pair>
+				<Pair key="info"><String>Press  to continue, Press  to go back.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_flash2/etc/xRegistry.sys#/dev_flash2/etc/xRegistry2.sys</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/module-action"
+				key="seg_backup_xreg_2_item"
+				attr="seg_backup_xreg_2_item"
+				/>
+		</Items>
+		</View>
+		<View id="seg_backup_xreg_3_item">
+		<Attributes>
+			<Table key="seg_backup_xreg_3_item">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Backup in slot 3 will be overwritten, are you sure?</String></Pair>
+				<Pair key="info"><String>Press  to continue, Press  to go back.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fcopy#/dev_flash2/etc/xRegistry.sys#/dev_flash2/etc/xRegistry3.sys</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query
+				class="type:x-xmb/module-action"
+				key="seg_backup_xreg_3_item"
+				attr="seg_backup_xreg_3_item"
+				/>
+		</Items>
+		</View>
+	
+	<View id="dump_tools">
+		<Attributes>
+			<Table key="view_log">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/text.png</String></Pair>
+				<Pair key="title"><String>View Log File</String></Pair>
+				<Pair key="info"><String>View "dev_hdd0/tmp/cfw_settings.log" file.</String></Pair>
+				<Pair key="module_name"><String>webrender_plugin</String></Pair>
+				<Pair key="module_action"><String>http://localhost/dev_hdd0/tmp/cfw_settings.log</String></Pair>
+			</Table>
+			<Table key="clean_log">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/trash.png</String></Pair>
+				<Pair key="title"><String>Clean Log File</String></Pair>
+				<Pair key="info"><String>Delete "dev_hdd0/tmp/cfw_settings.log" file.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>clean_log</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="dump_idps">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/file.png</String></Pair>
+				<Pair key="title"><String>Dump IDPS</String></Pair>
+				<Pair key="info"><String>Saves IDPS to log file.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>dump_idps</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="log_klic">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/key.png</String></Pair>
+				<Pair key="title"><String>Log KLicense Usage</String></Pair>
+				<Pair key="info"><String>Saves file name and klicense to log file.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>log_klic</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="log_secureid">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/list.png</String></Pair>
+				<Pair key="title"><String>Log Secure File ID Usage</String></Pair>
+				<Pair key="info"><String>Writes save data name and file id key to log file.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>log_secureid</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="dump_disc_key">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/disc.png</String></Pair>
+				<Pair key="title"><String>Dump Disc Hash Key</String></Pair>
+				<Pair key="info"><String>Retrieves disc hash key from an ORIGINAL game disc.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>dump_disc_key</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="backup_registry">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/setup.png</String></Pair>
+				<Pair key="title"><String>Backup xRegistry.sys</String></Pair>
+				<Pair key="info"><String>Make backup of system settings and user information to "dev_hdd0/tmp/xRegistry.sys.bak".</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>backup_registry</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="view_log"			attr="view_log"/>
+			<Item class="type:x-xmb/module-action" key="clean_log"			attr="clean_log"/>
+			<Item class="type:x-xmb/module-action" key="dump_idps"			attr="dump_idps"/>
+			<Item class="type:x-xmb/module-action" key="log_klic"			attr="log_klic"/>
+			<Item class="type:x-xmb/module-action" key="log_secureid"		attr="log_secureid"/>
+			<Item class="type:x-xmb/module-action" key="dump_disc_key"		attr="dump_disc_key"/>
+			<Item class="type:x-xmb/module-action" key="backup_registry"	attr="backup_registry"/>
+		</Items>
+	</View>
+	
+	<View id="recovery_menu">
+		<Attributes>
+			<Table key="applicable_version">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/info.png</String></Pair>
+				<Pair key="title"><String>Display Applicable Version</String></Pair>
+				<Pair key="info"><String>Displays minimum downgrade version.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>applicable_version</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="fs_check">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/hdd.png</String></Pair>
+				<Pair key="title"><String>Check File System</String></Pair>
+				<Pair key="info"><String>Reboots and allows you to check and repair filesystem.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>fs_check</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="rebuild_db">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/text.png</String></Pair>
+				<Pair key="title"><String>Rebuild Database</String></Pair>
+				<Pair key="info"><String>Reboots with database rebuilding flag set.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>rebuild_db</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="recovery_mode">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/tools.png</String></Pair>
+				<Pair key="title"><String>Toggle Recovery Mode</String></Pair>
+				<Pair key="info"><String>Reboot to Service Mode (NOT supported on NAND models!)</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>recovery_mode</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="fsm_tools">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Advanced Service Tools</String></Pair>
+				<Pair key="info"><String>Functions reserved for peoples which exactly know what they doing.</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action"  key="applicable_version"	attr="applicable_version"/>
+			<Item class="type:x-xmb/module-action"  key="fs_check"				attr="fs_check"/>
+			<Item class="type:x-xmb/module-action"  key="rebuild_db"			attr="rebuild_db"/>
+			<Item class="type:x-xmb/module-action"  key="recovery_mode"			attr="recovery_mode"/>
+			<Query class="type:x-xmb/folder-pixmap" key="fsm_tools"				attr="fsm_tools"	src="#fsm_tools"/>
+		</Items>
+	</View>
+	
+	<View id="fsm_tools">
+		<Attributes>
+			<Table key="rsod_fix">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>RSOD Fix</String></Pair>
+				<Pair key="info"><String>Re-initialize VTRM region to attempt to fix RSOD.</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>rsod_fix</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="service_mode">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/warning.png</String></Pair>
+				<Pair key="title"><String>Toggle Factory Service Mode</String></Pair>
+				<Pair key="info"><String>Enter or exit Factory Service Mode (do NOT install firmware while on FSM!).</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>service_mode</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="remarry_bd">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/disc_refresh.png</String></Pair>
+				<Pair key="title"><String>Remarry Blu-Ray Drive</String></Pair>
+				<Pair key="info"><String>Requires: enter to FSM and copy "eid_root_key" to "dev_usb00*/".</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>remarry_bd</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+			<Table key="usb_firm_loader">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/flash.png</String></Pair>
+				<Pair key="title"><String>USB Firmware Loader</String></Pair>
+				<Pair key="info"><String>Redirect "dev_flash/" access to a mounted "dev_usb00*/".</String></Pair>
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>usb_firm_loader</String></Pair>
+				<Pair key="bar_action"><String>none</String></Pair>
+				<Pair key="lbl_half"><String>1</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="rsod_fix"			attr="rsod_fix"/>
+			<Item class="type:x-xmb/module-action" key="usb_firm_loader"	attr="usb_firm_loader"/>
+			<Item class="type:x-xmb/module-action" key="service_mode"		attr="service_mode"/>
+			<Item class="type:x-xmb/module-action" key="remarry_bd"			attr="remarry_bd"/>
+		</Items>
+	</View>
+</XMBML>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XMBML version="1.0">
+	<View id="root">
+		<Items>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="power_options"
+				src="xmb://localhost/dev_flash/vsh/resource/explore/xmb/power_options.xml#power_options"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="package_manager_plus_main"
+				src="xmb://localhost/dev_flash/vsh/resource/explore/xmb/package_manager_plus.xml#package_manager_plus_main_items"
+				/>
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="custom_firmware_tools"
+				src="xmb://localhost/dev_flash/vsh/resource/explore/xmb/custom_firmware_tools.xml#custom_firmware_tools_main"
+				/>
+		</Items>
+	</View>
+</XMBML>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XMBML version="1.0">
+
+<View id="power_options">
+		<Attributes>
+			<Table key="options">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/power.png</String></Pair>	
+				<Pair key="title"><String>Power Options</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+				<Pair key="ingame"><String>disable</String></Pair>
+			</Table>
+		</Attributes>
+		<Items>
+			<Query 
+				class="type:x-xmb/folder-pixmap" 
+				key="options" attr="options"
+				src="#seg_branch"
+				/>
+		</Items>
+	</View>
+	<View id="seg_branch">
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="seg_shut_down" attr="seg_shut_down" src="#seg_shut_down"/>
+			<Query class="type:x-xmb/folder-pixmap" key="seg_hard_reboot" attr="seg_hard_reboot" src="#seg_hard_reboot"/>	
+			<Query class="type:x-xmb/folder-pixmap" key="seg_soft_reboot" attr="seg_soft_reboot" src="#seg_soft_reboot"/>		
+		</Items>
+	</View>
+	<View id="seg_shut_down">
+		<Attributes>
+			<Table key="shut">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/power.png</String></Pair>		
+				<Pair key="title"><String>Turn off system</String></Pair>
+				<Pair key="info"><String>Shuts down the ps3</String></Pair>				
+				<Pair key="module_name"><String>poweroff_plugin</String></Pair>
+				<Pair key="module_action"><String></String></Pair>	
+				</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="shut" attr="shut"/>
+		</Items>
+	</View>
+	<View id="seg_hard_reboot">
+		<Attributes>
+			<Table key="hard">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/power.png</String></Pair>		
+				<Pair key="title"><String>Hard reboot system</String></Pair>
+				<Pair key="info"><String>Fully reboots the hardware</String></Pair>				
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>hard_reboot_action</String></Pair>				
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="hard" attr="hard"/>
+		</Items>
+	</View>	
+	<View id="seg_soft_reboot">
+		<Attributes>
+			<Table key="soft">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/power.png</String></Pair>		
+				<Pair key="title"><String>Soft reboot system</String></Pair>
+				<Pair key="info"><String>Reboots lv2 kernel only</String></Pair>				
+				<Pair key="module_name"><String>xai_plugin</String></Pair>
+				<Pair key="module_action"><String>soft_reboot_action</String></Pair>					
+			</Table>
+		</Attributes>
+		<Items>
+			<Item class="type:x-xmb/module-action" key="soft" attr="soft"/>
+		</Items>
+	</View>			
+	</XMBML>

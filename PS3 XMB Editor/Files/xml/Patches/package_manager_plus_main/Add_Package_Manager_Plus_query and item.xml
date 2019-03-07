@@ -1,0 +1,15 @@
+	<!--XMB EDITOR STEP 1: Add Package Manager Plus query patch-->
+		
+		
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="package_manager_plus_main"
+				src="xmb://localhost/dev_flash/vsh/resource/explore/xmb/package_manager_plus.xml#package_manager_plus_main_items"
+				/>
+				
+
+	
+	<!--XMB EDITOR STEP 2: Copy 6 files-->
+	
+			Copy the 5 icons to dev_flash/vsh/resource/explore/icon/
+			Copy the package_manager_plus.xml to dev_flash/vsh/resource/explore/xmb/

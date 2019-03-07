@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMBML version="1.0">
+
+	<!-- Package Manager Plus -->
+	<View id="package_manager_plus_main_items">
+		<Attributes>
+			<Table key="package_manager_plus">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/package.png</String></Pair>
+				<Pair key="title"><String>Package Manager Plus</String></Pair>
+				<Pair key="info"><String></String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="package_manager_plus" attr="package_manager_plus" src="#package_manager_plus_items"/></Items>
+	</View>
+	<View id="package_manager_plus_items">
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="hdd0_install" attr="hdd0_install" src="#seg_package_files_install"/>
+			<Query class="type:x-xmb/folder-pixmap" key="hdd0_delete" attr="hdd0_delete" src="#seg_package_files_delete"/>
+			<Query class="type:x-xmb/folder-pixmap" key="downloaded" attr="downloaded" src="#seg_install_files_downloaded"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Install Package File -->
+	<View id="seg_package_files_install">
+		<Attributes>
+			<Table key="package_files_install">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/package.png</String></Pair>
+				<Pair key="title"><String>Install Package Files</String></Pair>
+				<Pair key="info"><String>Install package files from mass storage devices.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="package_files_install" attr="package_files_install" src="#seg_install_package"/></Items>
+	</View>
+	<View id="seg_install_package">
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="alldev_install" attr="alldev_install" src="#seg_install_files_alldev"/>
+			<Query class="type:x-xmb/folder-pixmap" key="hdd0_install" attr="hdd0_install" src="#seg_install_files_hdd0"/>
+			<Query class="type:x-xmb/folder-pixmap" key="og_install" attr="og_install" src="#seg_install_files_og"/>
+			<Query class="type:x-xmb/folder-pixmap" key="usb_install" attr="usb_install" src="#seg_install_files_usb"/>
+			<Query class="type:x-xmb/folder-pixmap" key="homebrew_install" attr="homebrew_install" src="#seg_homebrew_install"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Install Package File > All Packages Files -->
+	<View id="seg_install_files_alldev">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/package.png</String></Pair>
+				<Pair key="icon_notation"><String>WNT_XmbItemAlbum</String></Pair>
+				<Pair key="title"><String>All Packages Files</String></Pair>
+				<Pair key="info"><String>Install package files from all locations.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+				<Pair key="ingame"><String>disable</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="host_device" attr="host_device" src="#seg_install_files_alldev_path"/></Items>
+	</View>
+	<View id="seg_install_files_alldev_path">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_bdvd" src="host://localhost/q?path=/dev_bdvd&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_home_pkg1" src="host://localhost/q?path=/app_home/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_home_pkg2" src="host://localhost/q?path=/app_home/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_hdd0_pkg1" src="host://localhost/q?path=/dev_hdd0/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_hdd0_pkg2" src="host://localhost/q?path=/dev_hdd0/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0" src="host://localhost/q?path=/dev_usb000&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0_pkg1" src="host://localhost/q?path=/dev_usb000/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0_pkg2" src="host://localhost/q?path=/dev_usb000/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0_dl" src="host://localhost/q?path=/dev_usb000/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1" src="host://localhost/q?path=/dev_usb001&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1_pkg1" src="host://localhost/q?path=/dev_usb001/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1_pkg2" src="host://localhost/q?path=/dev_usb001/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1_dl" src="host://localhost/q?path=/dev_usb001/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2" src="host://localhost/q?path=/dev_usb002&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2_pkg1" src="host://localhost/q?path=/dev_usb002/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2_pkg2" src="host://localhost/q?path=/dev_usb002/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2_dl" src="host://localhost/q?path=/dev_usb002/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3" src="host://localhost/q?path=/dev_usb003&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3_pkg1" src="host://localhost/q?path=/dev_usb003/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3_pkg2" src="host://localhost/q?path=/dev_usb003/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3_dl" src="host://localhost/q?path=/dev_usb003/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4" src="host://localhost/q?path=/dev_usb004&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4_pkg1" src="host://localhost/q?path=/dev_usb004/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4_pkg2" src="host://localhost/q?path=/dev_usb004/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4_dl" src="host://localhost/q?path=/dev_usb004/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5" src="host://localhost/q?path=/dev_usb005&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5_pkg1" src="host://localhost/q?path=/dev_usb005/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5_pkg2" src="host://localhost/q?path=/dev_usb005/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5_dl" src="host://localhost/q?path=/dev_usb005/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6" src="host://localhost/q?path=/dev_usb006&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6_pkg1" src="host://localhost/q?path=/dev_usb006/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6_pkg2" src="host://localhost/q?path=/dev_usb006/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6_dl" src="host://localhost/q?path=/dev_usb006/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7" src="host://localhost/q?path=/dev_usb007&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7_pkg1" src="host://localhost/q?path=/dev_usb007/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7_pkg2" src="host://localhost/q?path=/dev_usb007/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7_dl" src="host://localhost/q?path=/dev_usb007/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms" 	src="host://localhost/q?path=/dev_ms&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms_pkg1" 	src="host://localhost/q?path=/dev_ms/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms_pkg2" src="host://localhost/q?path=/dev_ms/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms_dl" src="host://localhost/q?path=/dev_ms/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd" 	src="host://localhost/q?path=/dev_sd&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd_pkg1" 	src="host://localhost/q?path=/dev_sd/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd_pkg2" src="host://localhost/q?path=/dev_sd/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd_dl" src="host://localhost/q?path=/dev_sd/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf" 	src="host://localhost/q?path=/dev_cf&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf_pkg1" 	src="host://localhost/q?path=/dev_cf/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf_pkg2" src="host://localhost/q?path=/dev_cf/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf_dl" src="host://localhost/q?path=/dev_cf/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Install Package File > Homebrew Download folder -->
+	<View id="seg_homebrew_install">
+		<Attributes>
+			<Table key="homebrew">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Homebrew Downloads</String></Pair>
+				<Pair key="info"><String>Install from "PS3/DOWNLOADS/" folder on USB device or memory card.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="homebrew" attr="homebrew" src="#seg_homebrew_install_items"/></Items>
+	</View>
+	<View id="seg_homebrew_install_items">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb0" src="host://localhost/q?path=/dev_usb000/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb1" src="host://localhost/q?path=/dev_usb001/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb2" src="host://localhost/q?path=/dev_usb002/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb3" src="host://localhost/q?path=/dev_usb003/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb4" src="host://localhost/q?path=/dev_usb004/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb5" src="host://localhost/q?path=/dev_usb005/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb6" src="host://localhost/q?path=/dev_usb006/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb7" src="host://localhost/q?path=/dev_usb007/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_ms" src="host://localhost/q?path=/dev_ms/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_sd" src="host://localhost/q?path=/dev_sd/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_cf" src="host://localhost/q?path=/dev_cf/PS3/DOWNLOADS&suffix=.pkg&subclass=x-host/package"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Install Package File > Hard Disk Drive -->
+	<View id="seg_install_files_hdd0">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/hdd.png</String></Pair>
+				<Pair key="title"><String>Internal Hard Disk Drive</String></Pair>
+				<Pair key="info"><String>Install from "dev_hdd0/packages/" folder.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="host_device" attr="host_device" src="#seg_install_files_hdd0_path"/></Items>
+	</View>
+	<View id="seg_install_files_hdd0_path">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_hdd0_pkg1" src="host://localhost/q?path=/dev_hdd0/packages&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_hdd0_pkg2" src="host://localhost/q?path=/dev_hdd0/PKG&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_flash" src="host://localhost/q?path=/dev_flash/rebug/packages&suffix=.pkg&subclass=x-host/package"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Install Package File > Package Folders -->
+	<View id="seg_install_files_usb">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/usb.png</String></Pair>
+				<Pair key="title"><String>Package Folders</String></Pair>
+				<Pair key="info"><String>Install from "packages/" folder on USB device or memory card.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="host_device" attr="host_device" src="#seg_install_usb_path"/></Items>
+	</View>
+	<View id="seg_install_usb_path">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0" src="host://localhost/q?path=/dev_usb000/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1" src="host://localhost/q?path=/dev_usb001/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2" src="host://localhost/q?path=/dev_usb002/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3" src="host://localhost/q?path=/dev_usb003/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4" src="host://localhost/q?path=/dev_usb004/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5" src="host://localhost/q?path=/dev_usb005/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6" src="host://localhost/q?path=/dev_usb006/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7" src="host://localhost/q?path=/dev_usb007/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms" 	src="host://localhost/q?path=/dev_ms/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd" 	src="host://localhost/q?path=/dev_sd/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf" 	src="host://localhost/q?path=/dev_cf/packages&suffix=.pkg&subclass=x-host/package" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_bdvd" src="host://localhost/q?path=/dev_bdvd&suffix=.pkg&subclass=x-host/package" />
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Install Package File > Standard Package Location -->
+	<View id="seg_install_files_og">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/usb.png</String></Pair>
+				<Pair key="title"><String>Standard Package Location</String></Pair>
+				<Pair key="info"><String>Install from the "dev_usb_00*/".</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/xmlpackagefolder" key="host_device" attr="host_device" src="#seg_install_files_og_path"/></Items>
+	</View>
+	<View id="seg_install_files_og_path">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_home" src="host://localhost/q?path=/app_home&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0" src="host://localhost/q?path=/dev_usb000&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1" src="host://localhost/q?path=/dev_usb001&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2" src="host://localhost/q?path=/dev_usb002&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3" src="host://localhost/q?path=/dev_usb003&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4" src="host://localhost/q?path=/dev_usb004&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5" src="host://localhost/q?path=/dev_usb005&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6" src="host://localhost/q?path=/dev_usb006&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7" src="host://localhost/q?path=/dev_usb007&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms" src="host://localhost/q?path=/dev_ms&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd" src="host://localhost/q?path=/dev_sd&suffix=.pkg&subclass=x-host/package"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf" src="host://localhost/q?path=/dev_cf&suffix=.pkg&subclass=x-host/package"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Delete Package Files -->
+	<View id="seg_package_files_delete">
+		<Attributes>
+			<Table key="seg_package_files_delete">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/delete.png</String></Pair>
+				<Pair key="title"><String>Delete Package Files</String></Pair>
+				<Pair key="info"><String>Delete package files from mass storage devices.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="seg_package_files_delete" attr="seg_package_files_delete" src="#seg_delete_package"/></Items>
+	</View>
+	<View id="seg_delete_package">
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="alldevs_delete" attr="alldevs_delete" src="#seg_alldevs_delete"/>
+			<Query class="type:x-xmb/folder-pixmap" key="hdd0_delete" attr="hdd0_delete" src="#seg_delete_files_hdd0"/>
+			<Query class="type:x-xmb/folder-pixmap" key="og_delete" attr="og_delete" src="#seg_delete_files_og"/>
+			<Query class="type:x-xmb/folder-pixmap" key="usb_delete" attr="usb_delete" src="#seg_delete_files_usb"/>
+			<Query class="type:x-xmb/folder-pixmap" key="homebrew_delete" attr="homebrew_delete" src="#seg_homebrew_delete"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Delete Package Files > All Packages Files -->
+	<View id="seg_alldevs_delete">
+		<Attributes>
+			<Table key="alldevs_delete">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/package.png</String></Pair>
+				<Pair key="icon_notation"><String>WNT_XmbItemAlbum</String></Pair>
+				<Pair key="title"><String>All Package Files</String></Pair>
+				<Pair key="info"><String>Delete package files from all locations.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="alldevs_delete" attr="alldevs_delete" src="#seg_alldevs_delete_items"/></Items>
+	</View>
+	<View id="seg_alldevs_delete_items">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_hdd0_pkg1" src="host://localhost/q?path=/dev_hdd0/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_hdd0_pkg2" src="host://localhost/q?path=/dev_hdd0/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0" src="host://localhost/q?path=/dev_usb000&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0_pkg1" src="host://localhost/q?path=/dev_usb000/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0_pkg2" src="host://localhost/q?path=/dev_usb000/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0_dl" src="host://localhost/q?path=/dev_usb000/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1" src="host://localhost/q?path=/dev_usb001&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1_pkg1" src="host://localhost/q?path=/dev_usb001/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1_pkg2" src="host://localhost/q?path=/dev_usb001/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1_dl" src="host://localhost/q?path=/dev_usb001/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2" src="host://localhost/q?path=/dev_usb002&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2_pkg1" src="host://localhost/q?path=/dev_usb002/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2_pkg2" src="host://localhost/q?path=/dev_usb002/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2_dl" src="host://localhost/q?path=/dev_usb002/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3" src="host://localhost/q?path=/dev_usb003&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3_pkg1" src="host://localhost/q?path=/dev_usb003/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3_pkg2" src="host://localhost/q?path=/dev_usb003/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3_dl" src="host://localhost/q?path=/dev_usb003/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4" src="host://localhost/q?path=/dev_usb004&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4_pkg1" src="host://localhost/q?path=/dev_usb004/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4_pkg2" src="host://localhost/q?path=/dev_usb004/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4_dl" src="host://localhost/q?path=/dev_usb004/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5" src="host://localhost/q?path=/dev_usb005&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5_pkg1" src="host://localhost/q?path=/dev_usb005/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5_pkg2" src="host://localhost/q?path=/dev_usb005/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5_dl" src="host://localhost/q?path=/dev_usb005/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6" src="host://localhost/q?path=/dev_usb006&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6_pkg1" src="host://localhost/q?path=/dev_usb006/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6_pkg2" src="host://localhost/q?path=/dev_usb006/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6_dl" src="host://localhost/q?path=/dev_usb006/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7" src="host://localhost/q?path=/dev_usb007&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7_pkg1" src="host://localhost/q?path=/dev_usb007/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7_pkg2" src="host://localhost/q?path=/dev_usb007/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7_dl" src="host://localhost/q?path=/dev_usb007/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms" 	src="host://localhost/q?path=/dev_ms&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms_pkg1" 	src="host://localhost/q?path=/dev_ms/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms_pkg2" src="host://localhost/q?path=/dev_ms/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms_dl" src="host://localhost/q?path=/dev_ms/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd" 	src="host://localhost/q?path=/dev_sd&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd_pkg1" 	src="host://localhost/q?path=/dev_sd/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd_pkg2" src="host://localhost/q?path=/dev_sd/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd_dl" src="host://localhost/q?path=/dev_sd/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf" 	src="host://localhost/q?path=/dev_cf&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf_pkg1" 	src="host://localhost/q?path=/dev_cf/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf_pkg2" src="host://localhost/q?path=/dev_cf/PKG&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf_dl" src="host://localhost/q?path=/dev_cf/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_bdvd" src="host://localhost/q?path=/dev_bdvd&suffix=.pkg"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Delete Package Files > Homebrew Download folder -->
+	<View id="seg_homebrew_delete">
+		<Attributes>
+			<Table key="homebrew_delete">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Homebrew Downloads</String></Pair>
+				<Pair key="info"><String>Delete from "PS3/DOWNLOADS/" folder on USB device or memory card.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="homebrew_delete" attr="homebrew_delete" src="#seg_homebrew_delete_items"/></Items>
+	</View>
+	<View id="seg_homebrew_delete_items">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb0" src="host://localhost/q?path=/dev_usb000/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb1" src="host://localhost/q?path=/dev_usb001/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb2" src="host://localhost/q?path=/dev_usb002/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb3" src="host://localhost/q?path=/dev_usb003/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb4" src="host://localhost/q?path=/dev_usb004/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb5" src="host://localhost/q?path=/dev_usb005/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb6" src="host://localhost/q?path=/dev_usb006/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_usb7" src="host://localhost/q?path=/dev_usb007/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_ms" src="host://localhost/q?path=/dev_ms/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_sd" src="host://localhost/q?path=/dev_sd/PS3/DOWNLOADS&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_a_provider_cf" src="host://localhost/q?path=/dev_cf/PS3/DOWNLOADS&suffix=.pkg"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Delete Package Files > Hard Disk Drive -->
+	<View id="seg_delete_files_hdd0">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/hdd.png</String></Pair>
+				<Pair key="title"><String>Internal Hard Disk Drive</String></Pair>
+				<Pair key="info"><String>Delete from "dev_hdd0/packages/" folder.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="host_device" attr="host_device" src="#seg_delete_files_hdd0_path"/></Items>
+	</View>
+	<View id="seg_delete_files_hdd0_path">
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="host_provider_hdd0_pkg1" attr="host_provider_hdd0" src="host://localhost/q?path=/dev_hdd0/packages&suffix=.pkg"/>
+			<Query class="type:x-xmb/folder-pixmap" key="host_provider_hdd0_pkg2" attr="host_provider_hdd0" src="host://localhost/q?path=/dev_hdd0/PKG&suffix=.pkg"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Delete Package Files > Package Folders -->
+	<View id="seg_delete_files_usb">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/usb.png</String></Pair>
+				<Pair key="title"><String>Package Folder</String></Pair>
+				<Pair key="info"><String>Delete from "packages" folder on USB device or memory card.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="host_device" attr="host_device" src="#seg_delete_usb_path"/></Items>
+	</View>
+	<View id="seg_delete_usb_path">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0" src="host://localhost/q?path=/dev_usb000/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1" src="host://localhost/q?path=/dev_usb001/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2" src="host://localhost/q?path=/dev_usb002/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3" src="host://localhost/q?path=/dev_usb003/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4" src="host://localhost/q?path=/dev_usb004/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5" src="host://localhost/q?path=/dev_usb005/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6" src="host://localhost/q?path=/dev_usb006/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7" src="host://localhost/q?path=/dev_usb007/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms" 	src="host://localhost/q?path=/dev_ms/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd" 	src="host://localhost/q?path=/dev_sd/packages&suffix=.pkg" />
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf" 	src="host://localhost/q?path=/dev_cf/packages&suffix=.pkg" />
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Delete Package Files > Standard Package Location -->
+	<View id="seg_delete_files_og">
+		<Attributes>
+			<Table key="host_device">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/usb.png</String></Pair>
+				<Pair key="title"><String>Standard Package Location</String></Pair>
+				<Pair key="info"><String>Delete from "dev_usb00*/".</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="host_device" attr="host_device" src="#seg_delete_files_og_path"/></Items>
+	</View>
+	<View id="seg_delete_files_og_path">
+		<Items>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_home" src="host://localhost/q?path=/app_home&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb0" src="host://localhost/q?path=/dev_usb000&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb1" src="host://localhost/q?path=/dev_usb001&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb2" src="host://localhost/q?path=/dev_usb002&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb3" src="host://localhost/q?path=/dev_usb003&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb4" src="host://localhost/q?path=/dev_usb004&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb5" src="host://localhost/q?path=/dev_usb005&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb6" src="host://localhost/q?path=/dev_usb006&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_usb7" src="host://localhost/q?path=/dev_usb007&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_ms" 	src="host://localhost/q?path=/dev_ms&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_sd" 	src="host://localhost/q?path=/dev_sd&suffix=.pkg"/>
+			<Query class="type:x-xmb/xmlpackagefolder" key="host_provider_cf" 	src="host://localhost/q?path=/dev_cf&suffix=.pkg"/>
+		</Items>
+	</View>
+
+	<!-- Package Manager Plus > Downloaded Content -->
+	<View id="seg_install_files_downloaded">
+		<Attributes>
+			<Table key="seg_install_files_downloaded">
+				<Pair key="icon"><String>/dev_flash/vsh/resource/explore/icon/download.png</String></Pair>
+				<Pair key="title"><String>Downloaded Content</String></Pair>
+				<Pair key="info"><String>Manage your downloaded content bubbles.</String></Pair>
+				<Pair key="str_noitem"><String>msg_error_no_content</String></Pair>
+				<Pair key="child"><String>segment</String></Pair>
+			</Table>
+		</Attributes>
+		<Items><Query class="type:x-xmb/folder-pixmap" key="seg_install_files_downloaded" attr="seg_install_files_downloaded" src="#seg_install_files_downloaded_paths"/></Items>
+	</View>
+	<View id="seg_install_files_downloaded_paths">
+		<Items>
+			<Query class="type:x-xmb/folder-pixmap" key="seg_hdd_install" src="ese://localhost/query?type=install_game"/>
+			<Query class="type:x-xmb/folder-pixmap" key="seg_pkg_install" src="ese://localhost/query?type=install_pkg"/>
+		</Items>
+	</View>
+</XMBML>

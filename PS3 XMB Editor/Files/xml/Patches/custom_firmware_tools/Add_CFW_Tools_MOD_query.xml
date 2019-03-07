@@ -1,0 +1,38 @@
+	<!--XMB EDITOR STEP 1: Add CFW Tools query patch-->
+		
+		
+			<Query
+				class="type:x-xmb/folder-pixmap"
+				key="custom_firmware_tools"
+				src="xmb://localhost/dev_flash/vsh/resource/explore/xmb/custom_firmware_tools.xml#custom_firmware_tools_main"
+				/>
+				
+
+	
+	<!--XMB EDITOR STEP 2: Copy 24 files to flash-->
+	
+			Copy the custom_fimrware_tools.xml to /dev_blind/vsh/resource/explore/xmb/ 
+			Copy the xai_plugin.sprx to /dev_blind/vsh/module/
+			Copy the xai_plugin.rco to /dev_blind/vsh/resource/
+			Copy the disc.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the disc_refresh.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the dnla.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the download.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the faces.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the file.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the flash.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the folder_list.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the hdd.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the info.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the key.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the list.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the plugin.png to /dev_blind/vsh/resource/explore/icon/
+		    Copy the restart.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the setup.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the step.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the text.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the toggle.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the tools.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the trash.png to /dev_blind/vsh/resource/explore/icon/
+			Copy the warning.png to /dev_blind/vsh/resource/explore/icon/
+		
