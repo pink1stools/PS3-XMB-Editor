@@ -21,6 +21,7 @@ using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+using GongSolutions.Wpf.DragDrop;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
 using MahApps.Metro.SimpleChildWindow;
@@ -39,7 +40,7 @@ namespace PS3_XMB_Editor
         Cursor Cursor2;
 
         MainViewModel mainViewModel = new MainViewModel("category_user.xml");
-        
+        PatchViewModel patchViewModel = new PatchViewModel();
 
         public DataTable COLORS = new DataTable();
         public DataTable KnownItems = new DataTable();
@@ -63,7 +64,10 @@ namespace PS3_XMB_Editor
             dtpkg2.Columns.Add("id");
             
             mainViewModel = new MainViewModel("category_user.xml");
+            patchViewModel = new PatchViewModel();
+
             Open_xml("category_user.xml");
+            Open_patch_xml();
             //ReadXDocumentWithInvalidCharacters("category_user.xml");
         }
 
@@ -276,7 +280,7 @@ namespace PS3_XMB_Editor
             {
                 // lbtest.Items.Clear();
                 dtpkg2.Clear();
-                //MainViewModel(xml);
+                
                 mainViewModel = new MainViewModel(xml);
 
                 string xmlString = File.ReadAllText("Files/xml/" + xml);
@@ -318,9 +322,10 @@ namespace PS3_XMB_Editor
                                                         EasyName1 = EasyNames,
                                                         Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
                                                         visibility2 = Visibility.Collapsed,
-                                                        visibility3 = Visibility.Collapsed
-                                                        
-                                                });
+                                                        visibility3 = Visibility.Collapsed,
+                                                        visibility4 = Visibility.Collapsed
+
+                                                    });
 
                                                }
                                             if (t == 2)
@@ -333,7 +338,8 @@ namespace PS3_XMB_Editor
                                                     EasyName1 = EasyNames,
                                                     Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
                                                     visibility2 = Visibility.Visible,
-                                                    visibility3 = Visibility.Collapsed
+                                                    visibility3 = Visibility.Collapsed,
+                                                    visibility4 = Visibility.Collapsed
 ,
                                                     
                                                 });
@@ -350,12 +356,32 @@ namespace PS3_XMB_Editor
                                                     EasyName1 = EasyNames,
                                                     Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
                                                     visibility2 = Visibility.Visible,
-                                                    visibility3 = Visibility.Visible
+                                                    visibility3 = Visibility.Visible,
+                                                    visibility4 = Visibility.Collapsed
 ,
                                                     
                                                 });
                                                 //get_known(root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString());
                                             }
+                                                if (t == 4)
+                                                {
+                                                    mainViewModel.MSPCollection.Add(new MSP()
+                                                    {
+                                                        Id = tmp2 + 1,
+                                                        Name = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(0).Value.ToString(),
+                                                        Name2 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString(),
+                                                        Name3 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(2).Value.ToString(),
+                                                        Name4 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(3).Value.ToString(),
+                                                        EasyName1 = EasyNames,
+                                                        Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
+                                                        visibility2 = Visibility.Visible,
+                                                        visibility3 = Visibility.Visible,
+                                                        visibility4 = Visibility.Visible
+    ,
+
+                                                    });
+                                                    //get_known(root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString());
+                                                }
                                             }
 
 
@@ -396,6 +422,216 @@ namespace PS3_XMB_Editor
         lb7.DataContext = null;
         lb8.DataContext = null;*/
     });
+
+
+                System.Windows.Application.Current.Dispatcher.Invoke(
+                               DispatcherPriority.Normal,
+                               (ThreadStart)delegate
+                               {
+                                   try
+                                   {
+                                       /*
+                                       lbtest.DataContext = null;
+                                       lb2.DataContext = null;
+                                       lb3.DataContext = null;
+                                       lb4.DataContext = null;
+                                       lb5.DataContext = null;
+                                       lb6.DataContext = null;
+                                       lb7.DataContext = null;
+                                       lb8.DataContext = null;
+
+                                       lbtest.DataContext = dtpkg2.DefaultView;
+                                       lb2.DataContext = dtpkg2.DefaultView;
+                                       lb3.DataContext = dtpkg2.DefaultView;
+                                       lb4.DataContext = dtpkg2.DefaultView;
+                                       lb5.DataContext = dtpkg2.DefaultView;
+                                       lb6.DataContext = dtpkg2.DefaultView;
+                                       lb7.DataContext = dtpkg2.DefaultView;
+                                       lb8.DataContext = dtpkg2.DefaultView;
+
+                                       
+
+                                       lbtest.Items.Refresh();
+                                       lb2.Items.Refresh();
+                                       lb3.Items.Refresh();
+                                       lb4.Items.Refresh();
+                                       lb5.Items.Refresh();
+                                       lb6.Items.Refresh();
+                                       lb7.Items.Refresh();
+                                       lb8.Items.Refresh();*/
+                                   }
+                                   catch (Exception ex)
+                                   {
+
+                                   }
+                               });
+
+
+
+            }
+            catch (Exception ex)
+            {
+                /*added a try catch for this enitire method as well as something is causing it to fall over on some of the pkg's i tested */
+            }
+
+
+        }
+
+        public void Open_patch_xml()
+        {
+            try
+            {
+                // lbtest.Items.Clear();
+                //dtpkg2.Clear();
+
+                patchViewModel = new PatchViewModel();
+
+                string xmlString = File.ReadAllText("Files/xml/Patches/patches.xml");
+                xmlString = xmlString.Replace("&", "&amp;");
+                // xmlString = xmlString.Replace("\t", "&#x9;").Replace("\r", "&#xd;").Replace("\n", "&#xa;");
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xmlString);
+                XmlNode root1 = doc.DocumentElement;
+                if (root1.HasChildNodes)
+                {
+                    patchViewModel.PatchCollection = new ObservableCollection<MSP>();
+                    patchViewModel.PatchCollection.Clear();
+                    for (int o = 0; o < root1.ChildNodes.Count; o++)
+                    {
+
+                        if (root1.ChildNodes[o].Attributes != null && root1.ChildNodes[o].Attributes.Item(0).Value.ToString() == "root")
+                        {
+                            if (root1.ChildNodes[o].HasChildNodes)
+                            {
+                                //int tmp1 = root1.ChildNodes[o].ChildNodes.Count;
+                                for (int tmp = 0; tmp < root1.ChildNodes[o].ChildNodes.Count; tmp++)
+                                {
+                                    if (root1.ChildNodes[o].ChildNodes[tmp].HasChildNodes)
+                                    {
+                                        //int tmp1 = root1.ChildNodes[o].ChildNodes.Count;
+                                        for (int tmp2 = 0; tmp2 < root1.ChildNodes[o].ChildNodes[tmp].ChildNodes.Count; tmp2++)
+                                        {
+                                            if (root1.ChildNodes[o].ChildNodes[tmp].Name == "Items")
+                                            {
+                                                int t = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Count;
+                                                string EasyNames = get_known(root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString());
+
+                                                if (t == 1)
+                                                {
+                                                    patchViewModel.PatchCollection.Add(new MSP()
+                                                    {
+                                                        Id = tmp2 + 1,
+                                                        Name = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(0).Value.ToString(),
+                                                        EasyName1 = EasyNames,
+                                                        Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
+                                                        visibility2 = Visibility.Collapsed,
+                                                        visibility3 = Visibility.Collapsed,
+                                                        visibility4 = Visibility.Collapsed
+
+                                                    });
+
+                                                }
+                                                if (t == 2)
+                                                {
+                                                    patchViewModel.PatchCollection.Add(new MSP()
+                                                    {
+                                                        Id = tmp2 + 1,
+                                                        Name = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(0).Value.ToString(),
+                                                        Name2 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString(),
+                                                        EasyName1 = EasyNames,
+                                                        Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
+                                                        visibility2 = Visibility.Visible,
+                                                        visibility3 = Visibility.Collapsed,
+                                                        visibility4 = Visibility.Collapsed
+    ,
+
+                                                    });
+                                                    //get_known(root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString());
+                                                }
+                                                if (t == 3)
+                                                {
+                                                    patchViewModel.PatchCollection.Add(new MSP()
+                                                    {
+                                                        Id = tmp2 + 1,
+                                                        Name = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(0).Value.ToString(),
+                                                        Name2 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString(),
+                                                        Name3 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(2).Value.ToString(),
+                                                        EasyName1 = EasyNames,
+                                                        Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
+                                                        visibility2 = Visibility.Visible,
+                                                        visibility3 = Visibility.Visible,
+                                                        visibility4 = Visibility.Collapsed
+    ,
+
+                                                    });
+                                                    //get_known(root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString());
+                                                }
+                                                if (t == 4)
+                                                {
+                                                    patchViewModel.PatchCollection.Add(new MSP()
+                                                    {
+                                                        Id = tmp2 + 1,
+                                                        Name = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(0).Value.ToString(),
+                                                        Name2 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString(),
+                                                        Name3 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(2).Value.ToString(),
+                                                        Name4 = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(3).Value.ToString(),
+                                                        EasyName1 = EasyNames,
+                                                        Cnode = root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2],
+                                                        visibility2 = Visibility.Visible,
+                                                        visibility3 = Visibility.Visible,
+                                                        visibility4 = Visibility.Visible
+    ,
+
+                                                    });
+                                                    //get_known(root1.ChildNodes[o].ChildNodes[tmp].ChildNodes[tmp2].Attributes.Item(1).Value.ToString());
+                                                }
+                                            }
+
+
+                                        }
+                                    }
+                                }
+                                /*
+                                DataRow dr = dtpkg2.NewRow();
+                                dr["id"] = root1.ChildNodes[o].Attributes.Item(0).Value.ToString();
+                                mainViewModel.MSPCollection.Add(new MSP()
+                                {
+                                    Id = o + 1,
+                                    Name = root1.ChildNodes[o].Attributes.Item(0).Value.ToString(),
+                                    Cnode = root1.ChildNodes[o]
+                                });
+                                */
+
+
+
+                                //dtpkg2.Rows.Add(dr);
+                                userpatchList.DataContext = patchViewModel;
+
+                                gamepatchList.DataContext = patchViewModel;
+                                musicpatchList.DataContext = patchViewModel;
+                                tvpatchList.DataContext = patchViewModel;
+                                photopatchList.DataContext = patchViewModel;
+                                psnpatchList.DataContext = patchViewModel;
+                                networkpatchList.DataContext = patchViewModel;
+                                videopatchList.DataContext = patchViewModel;
+                            }
+                        }
+
+                    }
+                }
+                System.Windows.Application.Current.Dispatcher.Invoke(
+        DispatcherPriority.Normal,
+(ThreadStart)delegate
+{
+        /* lbtest.DataContext = null;
+         lb2.DataContext = null;
+         lb3.DataContext = null;
+         lb4.DataContext = null;
+         lb5.DataContext = null;
+         lb6.DataContext = null;
+         lb7.DataContext = null;
+         lb8.DataContext = null;*/
+});
 
 
                 System.Windows.Application.Current.Dispatcher.Invoke(
@@ -539,7 +775,7 @@ namespace PS3_XMB_Editor
             {
                 XMBfv.SelectedIndex = 6;
                 reset_xmblabels();
-                Open_xml("category_psn.xml");
+                Open_xml("category_network.xml");
                 clb7l.Foreground = (Brush)Application.Current.MainWindow.FindResource("BlackBrush");
                 clb7.Background = (Brush)Application.Current.MainWindow.FindResource("AccentColorBrush");
 
@@ -548,7 +784,7 @@ namespace PS3_XMB_Editor
             {
                 XMBfv.SelectedIndex = 7;
                 reset_xmblabels();
-                Open_xml("category_network.xml");
+                Open_xml("category_psn.xml");
                 clb8l.Foreground = (Brush)Application.Current.MainWindow.FindResource("BlackBrush");
                 clb8.Background = (Brush)Application.Current.MainWindow.FindResource("AccentColorBrush");
 
@@ -726,6 +962,135 @@ namespace PS3_XMB_Editor
         {
             ChangeAppStyle();
         }
+
+
+        private void Image_DragEnter(object sender, DragEventArgs e)
+        {
+            var s = sender as Image;
+            //DragEventArgs dropInfo = e as DragEventArgs;
+            
+            if (s.DataContext == mainViewModel)
+            {
+                
+            }
+        }
+        
+        private void Image_Drop(object sender, DragEventArgs e)
+        {
+
+            var s = sender as Image;
+            DragEventArgs dropInfo = e as DragEventArgs;
+
+            if (s.DataContext == mainViewModel)
+            {
+                MSP t = userList.Items.CurrentItem as MSP;
+                mainViewModel.MSPCollection.Remove(t);
+            }
+
+        }
+
+        #region<<ContextMenu>>
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var s = sender as MenuItem;
+            MSP t = s.DataContext as MSP;
+            mainViewModel.MSPCollection.Remove(t);
+        }
+
+        private void ContextMenu_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ContextMenu_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+        #endregion<<ContextMenu>>
+
+        #region<<UnselectAll>>
+        private void userList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            userList.UnselectAll();
+        }
+
+        private void userpatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            userpatchList.UnselectAll();
+        }
+
+        private void photoList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            photoList.UnselectAll();
+        }
+
+        private void photopatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            photopatchList.UnselectAll();
+        }
+
+        private void musicList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            musicList.UnselectAll();
+        }
+
+        private void musicpatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            musicpatchList.UnselectAll();
+        }
+
+        private void videoList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            videoList.UnselectAll();
+        }
+
+        private void videopatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            videopatchList.UnselectAll();
+        }
+
+        private void tvList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tvList.UnselectAll();
+        }
+
+        private void tvpatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tvpatchList.UnselectAll();
+        }
+
+        private void gameList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            gameList.UnselectAll();
+        }
+
+        private void gamepatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            gamepatchList.UnselectAll();
+        }
+
+        private void networkList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            networkList.UnselectAll();
+        }
+
+        private void networkpatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            networkpatchList.UnselectAll();
+        }
+
+        private void psnList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            psnList.UnselectAll();
+        }
+
+        private void psnpatchList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            psnpatchList.UnselectAll();
+        }
+        #endregion<<UnselectAll>>
+
+
     }
 
 
@@ -761,6 +1126,14 @@ namespace PS3_XMB_Editor
 
         #endregion
     }
+
+
+    public class Mysource
+    {
+        object source { get; set; }
+        FrameworkElement control { get; set; }
+    }
+
 
 
 }
